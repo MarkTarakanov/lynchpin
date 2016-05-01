@@ -16,7 +16,7 @@
       $mysqli = new mysqli('localhost', 'Mark Tarakanov', 'topsecret', 'Users');
 
       // Throw exception instead
-      if ($this->$mysqli->connect_errno) {
+      if ($mysqli->connect_errno) {
           echo 'Connect failed: ', $this->$mysqli->connect_error, '" }';
           exit();
       }
