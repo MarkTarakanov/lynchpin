@@ -13,7 +13,7 @@
       $languages = $_POST['languages'];
 
       // Connect to DB
-      $mysqli = new mysqli('localhost', 'Users', 'topsecret', 'Mark Tarakanov');
+      $mysqli = new mysqli('localhost', 'Mark Tarakanov', 'topsecret', 'Users');
 
       // Throw exception instead
       if ($this->$mysqli->connect_errno) {
