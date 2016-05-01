@@ -3,6 +3,7 @@
 <head>
 <body>
   <?php
+  ini_set('display_errors', 'On');
   if (isset($_POST['submit'])) {
     //process form
       $name = $_POST['name'];
