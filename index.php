@@ -58,7 +58,7 @@
       $mysqli = new mysqli('localhost', 'Mark Tarakanov', 'topsecret', 'Users');
       // Throw exception instead
       if ($mysqli->connect_errno) {
-          echo 'Connect failed: ', $this->$mysqli->connect_error, '" }';
+          echo 'Connect failed: ', $mysqli->connect_error, '" }';
           exit();
       }
       // Check if user exists
