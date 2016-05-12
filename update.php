@@ -1,15 +1,15 @@
-<?php   if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
+<?php
+  if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
     $id = $GET['id'];
-} else {
+  } else {
     header('Location: select.php');
-}
+  }
 ?><Docktype html>
 <html>
 <head>
 <body>
   <?php
     $name = '';
-    $password = '';
     $gender = '';
     $color = '';
 
@@ -19,11 +19,6 @@
       $ok = false;
     } else {
       $name = $_POST['name'];
-    }
-    if (!isset($_POST['password']) || $_POST['password'] === ''){
-      $ok = false;
-    } else {
-      $password = $_POST['password'];
     }
     if (!isset($_POST['gender']) || $_POST['gender'] === ''){
       $ok = false;
@@ -64,9 +59,6 @@
    <form method="post" action="">
     User Name: <input type="text" name="name" value="<?php
         echo htmlspecialchars($name);
-     ?>"><br>
-    Password: <input type="password" name="password" value="<?php
-        echo htmlspecialchars($password);
      ?>"><br>
     Gender:
       <input type="radio" name="gender" value="f" <?php
