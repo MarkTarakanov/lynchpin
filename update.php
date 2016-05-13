@@ -32,7 +32,7 @@
     }
     if ($ok) {
         $db = mysqli_connect('localhost', 'Mark Tarakanov', 'topsecret', 'Users');
-        $sql = sprintf("UPDATE users SET name='%s', gender='%s', color='%s'
+        $sql = sprintf("UPDATE Users SET name='%s', gender='%s', color='%s'
           WHERE id=%s",
         mysqli_real_escape_string($db, $name),
         mysqli_real_escape_string($db, $gender),
