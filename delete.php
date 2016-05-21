@@ -10,7 +10,7 @@
 
 
 
-<!DOCKTYPE>
+<!DOCTYPE>
 <html>
 <head>
     <title>PHP</title>

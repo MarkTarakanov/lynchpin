@@ -3,6 +3,10 @@
 <head>
 <body>
   <?php
+  // Show errors if they occur
+  ini_set('display_errors', 'On');
+
+  // Initialise variables
   $name = '';
   $password = '';
   $gender = '';
@@ -10,13 +14,30 @@
   $color = '';
   $languages = array();
 
-  if (isset($_POST['submit'])) {
+  // 
+  function checkInputs() {
+    // Initialise the flag
     $ok = true;
+
+
+    // ! = NOT
+    // === = EQUALS
+    // > = Greater than
+    // < = Less than
+    // <= = Less than or EQUALS
+    // >= = Greater than or equals
+
+
+    // if ((10 < 20) && (10 < 11)) {
+    //   echo "HERE";
+    // }
+
     if (!isset($_POST['name']) || $_POST['name'] === ''){
       $ok = false;
     } else {
       $name = $_POST['name'];
     }
+
     if (!isset($_POST['password']) || $_POST['password'] === ''){
       $ok = false;
     } else {
@@ -43,11 +64,17 @@
     }else {
       $languages = $_POST['languages'];
     }
+
+    
+    return $ok;
   }
-   ?>
-  <?php
-  ini_set('display_errors', 'On');
+
+  // Check if the form was submitted
   if (isset($_POST['submit'])) {
+
+    //Check if inputs are valid
+    if ( checkInputs() )
+    {
     //process form
       $name = $_POST['name'];
       $password = $_POST['password'];
@@ -85,6 +112,7 @@
         htmlspecialchars(implode(' ', $languages)),
         htmlspecialchars($tc));
       }
+    }
   }
   ?>
   <form method="post" action="">
